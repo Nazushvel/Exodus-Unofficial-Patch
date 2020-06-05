@@ -1,0 +1,141 @@
+diff -uarN "original/creatures3/Bootstrap/001 World/fungi.cos" "fixes/creatures3/Bootstrap/001 World/fungi.cos"
+--- "original/creatures3/Bootstrap/001 World/fungi.cos"	2020-06-03 05:43:25.863957042 -0700
++++ "fixes/creatures3/Bootstrap/001 World/fungi.cos"	2020-06-05 07:55:03.241676438 -0700
+@@ -89,6 +89,7 @@
+ 
+ 
+ 	subr grow
++		reps 5
+ 		setv va00 posl
+ 		setv va01 post
+ 		subv va00 8
+@@ -110,6 +111,7 @@
+ 		endi
+ 		mvto va00 va01
+ 		tick rand 600 1200
++		repe
+ 		kill ownr
+ 	retn
+ 
+@@ -172,6 +174,7 @@
+ 			inst
+ 			setv va00 posl
+ 			setv va01 post
++			reps 5
+ 			new: simp 2 3 10 "fungi" 7 110 600
+ 
+ 			attr 195
+@@ -198,7 +201,7 @@
+ 			setv ov82 1
+ 
+ 			setv ov87 0
+-
++			repe
+ 			targ ownr
+ 			setv ov00 2
+ 		endi
+@@ -279,6 +282,7 @@
+ 	setv va00 posl
+ 	setv va01 post
+ 	stim writ from 78 1
++	reps 5
+ 	new: simp 2 3 10 "fungi" 7 110 600
+ 
+ 	attr 195
+@@ -303,6 +307,7 @@
+ 	else
+ 		kill targ
+ 	endi
++	repe
+ 	kill ownr
+ endm
+ 
+@@ -314,4 +319,4 @@
+ next
+ enum 2 8 5
+ 	kill targ
+-next
+\ No newline at end of file
++next
+diff -uarN "original/dockingstation/Bootstrap/000 Switcher/!ds splash map.cos" "fixes/dockingstation/Bootstrap/000 Switcher/!ds splash map.cos"
+--- "original/dockingstation/Bootstrap/000 Switcher/!ds splash map.cos"	2001-11-01 10:45:44.000000000 -0800
++++ "fixes/dockingstation/Bootstrap/000 Switcher/!ds splash map.cos"	2020-06-05 05:42:44.934987343 -0700
+@@ -2,5 +2,5 @@
+ brmi 0 0
+ mapd 10000 10000
+ outv addm 0 0 800 600 "DS_splash"
+-mmsc 100 100 "ds_music.mng\\StringsSolo"
+-meta 0 -1 -1 0
+\ No newline at end of file
++mmsc 100 100 "ds_music.mng\\StringSolo"
++meta 0 -1 -1 0
+diff -uarN "original/dockingstation/Bootstrap/010 Docking Station/!map.cos" "fixes/dockingstation/Bootstrap/010 Docking Station/!map.cos"
+--- "original/dockingstation/Bootstrap/010 Docking Station/!map.cos"	2001-11-01 10:45:43.000000000 -0800
++++ "fixes/dockingstation/Bootstrap/010 Docking Station/!map.cos"	2020-06-05 05:44:08.501654240 -0700
+@@ -118,7 +118,7 @@
+ rmsc 440 9264 "ds_music.mng\\StringChords"
+ outv va00 outs " "  setv va00 addr 11 575 695 9502 9503 9650 9699
+ rtyp va00 4
+-rmsc 635 9600 "ds_music.mng\\StringsSolo"
++rmsc 635 9600 "ds_music.mng\\StringSolo"
+ outv va00 outs " "  setv va00 addr 11 985 1120 9055 9047 9122 9122
+ rtyp va00 0
+ rmsc 1052 9088 ""
+@@ -127,28 +127,28 @@
+ rmsc 1151 9190 ""
+ outv va00 outs " "  setv va00 addr 11 805 950 9504 9503 9693 9692
+ rtyp va00 6
+-rmsc 877 9598 "ds_music.mng\\StringsSolo"
++rmsc 877 9598 "ds_music.mng\\StringSolo"
+ outv va00 outs " "  setv va00 addr 11 950 1099 9285 9277 9503 9504
+ rtyp va00 0
+ rmsc 1024 9394 ""
+ outv va00 outs " "  setv va00 addr 11 950 1099 9503 9504 9692 9687
+ rtyp va00 6
+-rmsc 1024 9595 "ds_music.mng\\StringsSolo"
++rmsc 1024 9595 "ds_music.mng\\StringSolo"
+ outv va00 outs " "  setv va00 addr 11 1099 1223 9504 9503 9687 9680
+ rtyp va00 6
+-rmsc 1161 9592 "ds_music.mng\\StringsSolo"
++rmsc 1161 9592 "ds_music.mng\\StringSolo"
+ outv va00 outs " "  setv va00 addr 11 1120 1223 9047 9052 9122 9122
+ rtyp va00 0
+ rmsc 1171 9084 ""
+ outv va00 outs " "  setv va00 addr 11 1573 1709 9503 9503 9655 9602
+ rtyp va00 3
+-rmsc 1641 9552 "ds_music.mng\\StringsSolo"
++rmsc 1641 9552 "ds_music.mng\\StringSolo"
+ outv va00 outs " "  setv va00 addr 11 1314 1404 9054 9055 9122 9118
+ rtyp va00 0
+ rmsc 1359 9086 ""
+ outv va00 outs " "  setv va00 addr 11 695 805 9503 9504 9699 9693
+ rtyp va00 6
+-rmsc 750 9598 "ds_music.mng\\StringsSolo"
++rmsc 750 9598 "ds_music.mng\\StringSolo"
+ outv va00 outs " "  setv va00 addr 11 805 950 9289 9285 9504 9503
+ rtyp va00 0
+ rmsc 877 9396 ""
+@@ -202,19 +202,19 @@
+ rmsc 640 8947 ""
+ outv va00 outs " "  setv va00 addr 11 1223 1331 9503 9503 9680 9677
+ rtyp va00 6
+-rmsc 1277 9590 "ds_music.mng\\StringsSolo"
++rmsc 1277 9590 "ds_music.mng\\StringSolo"
+ outv va00 outs " "  setv va00 addr 11 1331 1451 9503 9503 9677 9671
+ rtyp va00 6
+-rmsc 1391 9587 "ds_music.mng\\StringsSolo"
++rmsc 1391 9587 "ds_music.mng\\StringSolo"
+ outv va00 outs " "  setv va00 addr 11 1451 1573 9503 9503 9671 9655
+ rtyp va00 6
+-rmsc 1512 9579 "ds_music.mng\\StringsSolo"
++rmsc 1512 9579 "ds_music.mng\\StringSolo"
+ outv va00 outs " "  setv va00 addr 11 440 575 9401 9373 9466 9502
+ rtyp va00 0
+ rmsc 507 9451 ""
+ outv va00 outs " "  setv va00 addr 11 440 575 9466 9502 9568 9650
+ rtyp va00 4
+-rmsc 507 9558 "ds_music.mng\\StringsSolo"
++rmsc 507 9558 "ds_music.mng\\StringSolo"
+ outv va00 outs " "  setv va00 addr 11 575 695 9373 9312 9502 9503
+ rtyp va00 0
+ rmsc 635 9438 ""
