@@ -1,0 +1,6 @@
+This is credit is for people who have pointed out the bugs or problems in the game. I have made all changes by hand but used these to help find problems in the engines
+
+Bugs:
+    - Stringsolo fix - incorrect name in some files - Vermidia
+    - Fungus fix - creates 5 seeds instead of 1 - Pirate-Rob
+    
